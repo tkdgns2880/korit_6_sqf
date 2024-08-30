@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes move {
+            0% {
+                left: 0px;
+            }
+            25% {
+                top: 100px;
+            }
+            50% {
+                left: 100px;
+            }
+            75% {
+                top: 200px;
+            }
+            100% {
+                left: 300px;
+                top: 300px;
+            }
+        }
+        .box {
+            position: absolute;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            animation-name: move; 
+            /* animation-name: -> @keyframes 이름 */
+            animation-timing-function: ease-in-out;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            /* animation-direction: alternate; 갔다가 돌아가게 하는 명령 */
+            animation-iteration-count: infinite;
+            /* animation-iteration-count: -> 몇번 반복할지 카운터하는 명령
+                 infinite; 무한 반복 시키는 명령 */
+            animation-play-state: running;
+        }
+        .box:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

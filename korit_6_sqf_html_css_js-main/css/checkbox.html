@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .custom-chk {
+            display: none;
+
+        }
+        input[type=":checkbox"] {
+            display: none;
+        }
+        .custom-chk + label { 
+            /* label 높이 넓이 적용이 안되는 요소
+                 inline-block 사용함으로써 높이 넓이 적용이 가능해진다 */
+            display: inline-block;
+            box-sizing: border-box;
+            border: 1px solid #dbdbdb;
+            padding: 5px;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+        }
+        .custom-chk:checked + label {
+            background-clip: content-box;
+            background-color: #df1089;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="chk1" class="custom-chk">
+    <label for="chk1"></label>
+    <label for="chk1">체크1</label>
+
+    <input type="checkbox" id="chk2" class="custom-chk">
+    <label for="chk2"></label>
+    <label for="chk2">체크2</label>
+</body>
+</html>

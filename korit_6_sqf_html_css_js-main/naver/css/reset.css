@@ -1,0 +1,14 @@
+html, body {
+    height: 100%;
+}
+body, h1, ul, ol, button {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+button {
+    cursor: pointer;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { 
+        /* transition: left, top, all 3s ease; 박스를 이동하는 명령어 
+            left(왼쪽, 오른쪽) top(위, 아래) all(다 가능)/all(명령어 미입력시 대각선) */
+            transition: all 3s ease;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            box-sizing: border-box;
+            border: 3px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        .left300 {
+            left: 300px;
+        }
+        .top300 {
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button class="move-button">이동</button>
+    <script>
+        const box = document.querySelector(".box");
+        const moveButton = document.querySelector(".move-button");
+        moveButton.onclick = () => {
+            if(box.classList.contains("left300")) {
+                box.classList.remove("left300");
+                setTimeout(() => {box.classList.remove("top300");}, 3000);
+                return;
+            }
+            box.classList.add("left300");
+            setTimeout(() => {box.classList.add("top300");}, 3000);
+            }
+    </script>
+</body>
+</html>
